@@ -1,4 +1,9 @@
 class Car
+  def move(direction, distance)
+    self.turn(direction)
+    self.run(distance)
+  end
+
   def turn(direction)
     puts "#{direction}に曲がります。"
   end
@@ -9,11 +14,9 @@ class Car
 
 end
 
-car = Car.new
-car.turn("右")
 
 car = Car.new
-car.run(5)
+car.move("右", 5)
 
 # クラスメソッド
 class Car
@@ -24,13 +27,6 @@ end
 
 Car.run(10)
 
-
-# インスタンスを作成・呼び出し
-# インスタンスを作成するにはnewメソッドを使用します。
-
-# インスタンス名 = クラス名.new #作成
-# インスタンス名.メソッド名(引数) #呼び出し
-# 書き方は、クラス名の後ろに「.new」をつけます。
-# 右辺で作成されたものが、左辺のインスタンス名に代入されます。
-# 2行目のように「インスタンス名.メソッド名」でインスタンスを呼び出す事ができます。
-# ※引数を設定するときは、メソッド名の後ろに()で書いてあげましょう。
+# レシーバのself
+# メソッドを呼び出したオブジェクト自身のことを指します。
+# Rubyの用語というわけではなく、一般にも使われる用語です。
